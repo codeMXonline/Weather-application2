@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Title of the Project-->
+  <title>Weather Application Website</title>
+  <!--Link Tailwind Css-->
+   <link rel="stylesheet" href="output.css">
+  <!--Link Js file-->
+  <script defer src="index.js"></script>
+  <!--Link Css file-->
+  <link rel="stylesheet" href="style.css">
+  <!--Link font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <!--Main Container of the Weather application-->
+  <div class="container">
+    <!--Left side of the Weather application -->
+    <!--Tailwind CSS for styling Weather Input container-->
+    <div class="weather-input" class="fixed inset-0 bg-[#78c1f3]">
+      <div class="input-group">
+        <input type="text" id="userLocation" placeholder="Search for places..." class="border border-gray-400 px-2 py-1 rounded"/>
+        <select id="converter" class="converter" >
+          <option>C</option>
+          <option>F</option>
+        </select>
+        <i class="fa fa-search" onclick="findUserLocation();"></i>
+      </div>
+      
+      <!--Use your current location -->
+      <button id="currentLocationBtn">Use My Location</button>
+     <!--Add drop down section-->
+      <select id="recentCities" style="display: none; margin-bottom: 1rem; width: 100%; padding: 0.5rem; border-radius: 6px; font-size: 15px;">
+  <option disabled selected>Recent Searches</option>
+</select>
+      <div class="input-div">
+      <!--Weather Icon container-->
+      <div class="weatherIcon"></div>
+      <h2 class="temperature"></h2>
+      <!--Weather's Feellike container-->
+      <div class="feelsLike"></div>
+      <div class="description"></div>
+      <hr/>
+      <!--Date and day container-->
+      <div class="date"></div>
+      <div class="city"></div>
+    </div>
+    </div>
+    <!--Right side of Weather application containing output-->
+    <!--Tailwind CSS for weather Output-->
+  <div class="weather-output" class = "fixed inset-0 bg-[#f6f6f6] p-2 overflow-auto">
+      <h2 class="heading">Today's Highlights</h2>
+       <div class="highlights">
+        <div class="humidity">
+          Humidity
+          <i class="fa-solid fa-water"></i>
+          <h1 id="HValue"></h1>
+        </div>
+       
+
+       
+        <div class="wind-speed">
+          wind-speed
+          <i class="fa-solid fa-wind"></i>
+          <h1 id="WValue"></h1>
+        </div>
+       
+
+       
+        <div class="sun">
+          <span>
+            <i class="fa-solid fa-sun"></i>
+            <p><span id="SRValue"></span>Sunrise</p>
+          </span>
+          <span>
+            <i class="fa-regular fa-sun"></i>
+            <p><span id="SSValue"></span>Sunset</p>
+          </span>
+        </div>
+       
+
+       
+        <div class="clouds">
+          Clouds
+          <i class="fa-solid fa-cloud"></i>
+          <h1 id="CValue"></h1>
+        </div>
+       
+
+       
+        <div class="maxtemperature-index">
+          Min Temperature
+          <i class="fa-solid fa-bacon"></i>
+          <h1 id="MTValue"></h1>
+        </div>
+       
+
+       
+        <div class="pressure">
+          Pressure
+          <i class="fa-solid fa-volcano"></i>
+          <h1 id="PValue"></h1>
+        </div>
+        </div>
+        <br/>
+      <h2 class="heading">This Week</h2>
+      <!--Forecast container-->
+      <div class="Forecast" class="display:grid">
+
+      </div>
+    </div>
+    </div>
+</body>
+</html>

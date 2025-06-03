@@ -1,0 +1,113 @@
+/*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
+@layer properties;
+.container {
+  width: 100%;
+}
+.border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+  margin-top: 0px;
+  padding: 0px;
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+.weather-input {
+  width: 40%;
+  position: fixed;
+  inset: 0;
+  background-color: #78c1f3;
+  padding: 1rem 2.5rem;
+}
+.weatherIcon {
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: contain;
+  display: block;
+  height: 25%;
+  margin: 2rem auto;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+.input-group input {
+  background-color: white;
+  text-transform: capitalize;
+  padding: 0.5rem;
+  font-size: 15px;
+  border-radius: 6px;
+  width: 100%;
+  border: none;
+}
+.input-group .converter {
+  position: absolute;
+  right: 45px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.input-group .fa-search {
+  position: absolute;
+  right: 15px;
+  color: #909090;
+  cursor: pointer;
+  font-size: 22px;
+}
+.weather-output {
+  width: 60%;
+  position: fixed;
+  inset: 0;
+  margin-left: 40%;
+  padding: 2rem;
+  background-color: #f6f6f6;
+  overflow: auto;
+}
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3,350px);
+  grid-auto-flow: row;
+  row-gap: 1rem;
+  column-gap: 10px;
+}
+.highlights div {
+  height: 200px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #78c1f3;
+  border-radius: 20px;
+  padding: 1rem;
+}
+.highlights i {
+  font-size: 45px;
+}
+.sun span {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
+  }
+}
