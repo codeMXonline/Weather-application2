@@ -14,15 +14,16 @@ CValue=document.getElementById("CValue"),
 MTValue=document.getElementById("MTValue"),
 PValue=document.getElementById("PValue"),
 Forecast=document.querySelector(".Forecast");
-/*Drop down functionality */
+// Get DOM elements
 const recentCitiesDropdown = document.getElementById("recentCities");
 
+// Update the list of recent cities
 function updateRecentCities(city) {
   let cities = JSON.parse(localStorage.getItem("recentCities")) || [];
 
   if (!cities.includes(city)) {
     cities.push(city);
-    // Limit to 5
+    // Limit to latest 5
     if (cities.length > 5) cities.shift(); 
     localStorage.setItem("recentCities", JSON.stringify(cities));
   }
@@ -30,6 +31,7 @@ function updateRecentCities(city) {
   renderRecentCitiesDropdown();
 }
 
+// Render the recent cities dropdown
 function renderRecentCitiesDropdown() {
   let cities = JSON.parse(localStorage.getItem("recentCities")) || [];
 
@@ -38,8 +40,10 @@ function renderRecentCitiesDropdown() {
     return;
   }
 
+  // Show and populate the dropdown
   recentCitiesDropdown.style.display = "block";
   recentCitiesDropdown.innerHTML = `<option disabled selected>Recent Searches</option>`;
+  
   cities.forEach(city => {
     let option = document.createElement("option");
     option.value = city;
@@ -48,14 +52,15 @@ function renderRecentCitiesDropdown() {
   });
 }
 
-// Load dropdown when page loads
+// When the page loads, check and render the dropdown
 document.addEventListener("DOMContentLoaded", renderRecentCitiesDropdown);
 
-// On dropdown change
+// When user selects from dropdown
 recentCitiesDropdown.addEventListener("change", function () {
   userLocation.value = this.value;
-  findUserLocation();
+  findUserLocation(); // Should be defined elsewhere in your code
 });
+
 
 
 /*Linking the Weather Api and Date */
